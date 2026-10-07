@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lagos: The Hustle v7</title>
+<title>Lagos: The Hustle</title>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#08130F;--glass:rgba(255,255,255,.055);--line:rgba(244,235,214,.13);--ink:#F4EBD6;--mut:#a9b3a6;--o:#FF7A1A;--g:#3FCF85;--r:#FF5468;--b:#6BB6FF;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -40,6 +40,11 @@ h2{margin:0 0 10px;font-size:17px;font-weight:700}
 .act b{display:block}.act small{color:var(--mut)}
 .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}.chip{font-size:11.5px;padding:1px 8px;border-radius:10px;border:1px solid var(--line)}.chip.g{color:var(--g);border-color:rgba(63,207,133,.5)}.chip.b{color:var(--r);border-color:rgba(255,84,104,.5)}
 .end{width:100%;margin-top:10px;font:inherit;font-weight:700;padding:12px;border-radius:14px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}.end.pulse{background:var(--o);color:#1a0d02;border-color:var(--o)}
+.feed-panel{border-color:rgba(255,122,26,.32);background:rgba(255,122,26,.045)}
+.feed-panel h2{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.feed-live{font-size:10px;letter-spacing:.08em;padding:3px 7px;border-radius:999px;color:var(--o);border:1px solid rgba(255,122,26,.4);background:rgba(255,122,26,.1)}
+.feed-sub{margin:0 0 9px;color:var(--mut);font-size:12px}
+.notebook-panel{background:rgba(255,255,255,.035)}
 .feed{display:grid;gap:6px;max-height:320px;overflow:auto;font-size:14px}
 .feed div{padding:7px 10px;border-radius:10px;background:rgba(255,255,255,.04);border-left:3px solid var(--line)}.feed .good{border-color:var(--g)}.feed .bad{border-color:var(--r)}
 .feed i{font-style:normal;font-size:11px;color:var(--o);margin-right:6px}
@@ -133,6 +138,25 @@ h2{margin:0 0 10px;font-size:17px;font-weight:700}
 @keyframes v7shake{25%{transform:translateX(-3px)}50%{transform:translateX(3px)}75%{transform:translateX(-2px)}}
 
 .savebar{display:flex;gap:7px;margin-top:8px}.savebar button{font:inherit;font-size:12px;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:9px;padding:6px 9px;cursor:pointer}.savebar button:hover{border-color:var(--o)}
+/* V10 UX: mobile-first hierarchy */
+.player-chip{font-size:12px;color:var(--o);font-weight:800;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,122,26,.35);background:rgba(255,122,26,.08);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mission-label{font-size:10px;letter-spacing:.1em;color:var(--o);font-weight:800;margin-top:8px}.mis{padding:9px 10px;border:1px solid rgba(255,122,26,.22);border-radius:12px;background:rgba(255,122,26,.055)}
+.mobile-hint{display:none;font-size:10px;color:var(--mut);font-weight:500;margin-left:5px}
+.v10-mission{margin-top:14px;padding:13px 14px;border-radius:15px;background:rgba(255,122,26,.08);border:1px solid rgba(255,122,26,.25);display:grid;gap:3px}.v10-mission b{font-size:10px;letter-spacing:.12em;color:var(--o)}.v10-mission strong{font-size:18px;line-height:1.15}.v10-mission span{font-size:12px;color:var(--mut)}
+@media(max-width:720px){
+ body{font-size:14px;overflow-x:hidden}.wrap{padding:10px 10px 24px}.brand{font-size:10px}.v7badge{font-size:8px;padding:2px 6px;margin-left:3px}
+ h1{font-size:34px;margin-top:5px}.top{gap:6px;margin-top:7px}.days{order:1;width:100%;justify-content:flex-start}.days span{font-size:10px;padding:3px 7px}.player-chip{order:2;max-width:46vw;font-size:11px}.vibe{order:3;font-size:11px;padding:4px 9px;margin-left:auto}.wx{font-size:12px;margin:7px 0 0}.alerts{margin-top:7px}.al{font-size:12px;padding:7px 9px}
+ .stagep{position:relative;top:auto;z-index:2;margin-top:8px;padding:6px;border-radius:15px}.stagep .stage{width:100%;max-width:none;aspect-ratio:600/230}.scenehint{font-size:9px;padding:3px 7px}.where{font-size:10px;padding:3px 7px}.nameplate{font-size:8px}
+ .grid{display:flex;flex-direction:column;gap:10px;margin-top:10px}.grid>#card{order:0}.grid>section:nth-of-type(1){order:1}.grid>section.map-panel{order:5}.grid>section:nth-of-type(3){order:2}.grid>section.feed-panel{order:3}.grid>section.notebook-panel{order:6}
+ .grid .p{padding:11px;border-radius:15px}.grid h2{font-size:15px;margin-bottom:8px}.mobile-hint{display:inline}.stats{grid-template-columns:repeat(2,1fr);gap:6px}.st{padding:7px 8px;border-radius:10px;background:rgba(255,255,255,.025)}.st strong{font-size:17px}.st small{font-size:10px}.slots{font-size:11px;margin-top:8px}
+ .acts{grid-template-columns:1fr;gap:7px}.act{padding:10px;border-radius:12px}.act b{font-size:14px}.act small{font-size:11px}.chips{margin-top:5px}.chip{font-size:10px}
+ .feed-panel{box-shadow:0 8px 26px rgba(255,122,26,.08)}.feed{max-height:230px;font-size:12px}.feed div{padding:7px 8px}.feed-sub{font-size:11px;margin-bottom:7px}
+ .map{height:220px}.pin{font-size:11px;padding:4px 7px}.pin small{font-size:9px}.tag{font-size:11px}.notebook-panel{opacity:.92}.savebar button{font-size:11px;padding:6px 8px}
+ /* Keep secondary information compact without hiding it. */
+ .map-panel .map,.map-panel .tag{max-height:0;opacity:0;overflow:hidden;margin:0;transition:max-height .25s ease,opacity .2s ease}.map-panel:focus-within .map,.map-panel:focus-within .tag,.map-panel:hover .map,.map-panel:hover .tag{max-height:260px;opacity:1;margin-top:8px}
+ /* On touch, tapping the map heading expands it via the section itself. */
+ .map-panel h2{cursor:pointer}.map-panel h2:active{color:var(--o)}
+}
 </style></head>
 <body>
 
@@ -169,19 +193,39 @@ border-radius:12px;padding:11px 7px;cursor:pointer}
 font:inherit;font-weight:800;font-size:16px;cursor:pointer}.v8-start:hover{filter:brightness(1.08)}
 .v8-note{font-size:11px;color:#768277;margin-top:10px;text-align:center}
 @media(max-width:720px){.v8-shell{grid-template-columns:1fr}.v8-hero{min-height:auto;padding:22px}.v8-avatar{font-size:80px;margin:10px 0}.v8-hero h2{font-size:48px}}
+
+@media(max-width:720px){
+  #v8-onboard{align-items:flex-start;padding:10px;min-height:100dvh}
+  .v8-shell{width:100%;gap:10px}
+  .v8-hero,.v8-card{border-radius:17px}
+  .v8-hero{padding:16px;min-height:0}
+  .v8-hero h2{font-size:42px;margin:7px 0}
+  .v8-copy{font-size:13px;margin:8px 0}
+  .v10-mission{margin-top:9px;padding:10px 11px}.v10-mission strong{font-size:16px}.v10-mission span{font-size:11px}
+  .v8-rules{margin-top:9px;gap:6px}.v8-rule{padding:7px 8px}.v8-rule b{font-size:13px}.v8-rule small{font-size:10px}
+  .v8-avatar{font-size:48px;margin:8px 0 0}
+  .v8-card{padding:16px}.v8-card h3{font-size:22px}.v8-card p{font-size:12px;margin-bottom:10px}
+  .v8-field{margin:10px 0}.v8-field input{padding:11px 12px}.v8-choices{grid-template-columns:repeat(2,1fr);gap:6px}.v8-choice{padding:9px 6px}.v8-choice b{font-size:12px}.v8-choice small{font-size:9px}
+  .v8-start{margin-top:12px;padding:12px;font-size:14px}.v8-note{font-size:10px}
+}
 </style>
 
 <div id="v8-onboard">
   <div class="v8-shell">
     <section class="v8-hero">
       <div>
-        <div class="v8-kicker">WE TALK SOUND · INTERACTIVE LAGOS LAB · V8</div>
+        <div class="v8-kicker">WE TALK SOUND · INTERACTIVE LAGOS LAB · V10</div>
         <h2>LAGOS:<br><span>THE HUSTLE</span></h2>
         <p class="v8-copy">Everybody wants to japa. First, survive Lagos. You have 7 days, ₦100,000 and one question: how far can you take it?</p>
+<div class="v10-mission">
+  <b>YOUR MISSION</b>
+  <strong>Turn ₦100,000 into ₦300,000 in 7 days.</strong>
+  <span>Work. Network. Take risks. Manage your time, energy and money. Lagos will handle the rest.</span>
+</div>
         <div class="v8-rules">
           <div class="v8-rule"><b>₦100,000</b><small>Starting cash</small></div>
           <div class="v8-rule"><b>7 DAYS</b><small>Make your move</small></div>
-          <div class="v8-rule"><b>₦300,000</b><small>Japa Fund target</small></div>
+          <div class="v8-rule"><b>₦300,000</b><small>Win target</small></div>
           <div class="v8-rule"><b>RENT DUE</b><small>Thursday night</small></div>
         </div>
       </div>
@@ -206,14 +250,14 @@ font:inherit;font-weight:800;font-size:16px;cursor:pointer}.v8-start:hover{filte
         </div>
       </div>
       <button class="v8-start" id="v8-start">START HUSTLING →</button>
-      <div class="v8-note">Your name will appear throughout your run. No account required.</div>
+      <div class="v8-note">Your name stays attached to your character for the whole run. No account required.</div>
     </section>
   </div>
 </div>
 <div class="wrap">
-<div class="brand"><b>WE TALK SOUND</b> · Interactive Lagos Lab <span class="v7badge">V7 · PLAYABLE WORLD</span></div>
+<div class="brand"><b>WE TALK SOUND</b> · Interactive Lagos Lab <span class="v7badge">V10 · MOBILE FIRST</span></div>
 <h1>Lagos: <em>The Hustle</em></h1>
-<div class="top"><div class="days" id="days"></div><div id="nm" style="font-size:13px;color:var(--o);font-weight:800"></div><div class="vibe" id="vibe"></div></div>
+<div class="top"><div class="days" id="days"></div><div class="player-chip" id="nm">PLAYER</div><div class="vibe" id="vibe"></div></div>
 <p class="wx" id="wx"></p><div class="alerts" id="alerts"></div>
 <section class="p stagep"><div class="stage" id="stage" data-pose="idle" data-emo="neutral" data-set="none">
 <div class="stars"></div><div class="orb" id="orb"></div>
@@ -238,40 +282,52 @@ font:inherit;font-weight:800;font-size:16px;cursor:pointer}.v8-start:hover{filte
 <g class="face f-meh"><circle cx="55" cy="38" r="2" fill="#14100d"/><circle cx="67" cy="38" r="2" fill="#14100d"/><path d="M56 47H64" stroke="#14100d" stroke-width="2"/></g>
 <g class="laptop"><rect x="72" y="88" width="36" height="3" fill="#cfd3d8"/><path d="M77 88L81 66H104L104 88Z" fill="#2c3036"/><circle cx="92" cy="77" r="3" fill="#ff7a1a"/></g></g>
 <text class="zzz" x="82" y="22" fill="#fff" font-size="16" font-weight="800">z z z</text></svg></div>
-<svg class="bgsvg fg" viewBox="0 0 600 230" preserveAspectRatio="xMidYMax slice"><g class="int" id="fgi"></g></svg><div class="veh" id="veh"></div><div class="rain"></div><div class="fx" id="fx"></div><div class="tb" id="tb"></div><div class="nameplate">'+v8DisplayName()+'</div><div class="where" id="where"></div><div class="scenehint" id="scenehint">YOU ARE HERE</div><div class="cap" id="cap"></div>
-</div><div class="mis" id="mis"></div></section>
+<svg class="bgsvg fg" viewBox="0 0 600 230" preserveAspectRatio="xMidYMax slice"><g class="int" id="fgi"></g></svg><div class="veh" id="veh"></div><div class="rain"></div><div class="fx" id="fx"></div><div class="tb" id="tb"></div><div class="nameplate" id="nameplate"></div><div class="where" id="where"></div><div class="scenehint" id="scenehint">YOU ARE HERE</div><div class="cap" id="cap"></div>
+</div><div class="mission-label">YOUR GAME PLAN</div><div class="mis" id="mis"></div></section>
 <div class="grid">
  <div id="dlg"><div class="dbox"><div class="dhead"><div class="dav" id="dav"></div><div><b id="dwho"></b><p id="dtxt"></p></div></div><div id="dopts"></div></div></div>
 <div id="card"><h2 id="cardT"></h2><p id="cardS"></p></div>
 <section class="p"><h2>Your life</h2><div class="stats" id="stats"></div><div id="slots"></div></section>
- <section class="p"><h2>Lagos map</h2><div class="map" id="map"></div><p class="tag" id="tag"></p></section>
+ <section class="p map-panel"><h2>Lagos map <span class="mobile-hint">Tap to explore</span></h2><div class="map" id="map"></div><p class="tag" id="tag"></p></section>
  <section class="p"><h2 id="atT"></h2><div class="acts" id="acts"></div><button class="end" id="endB"></button></section>
- <section class="p"><h2>Notebook</h2><div id="nb"></div>
+ <section class="p feed-panel"><h2><span>Lagos Feed</span><span class="feed-live">LIVE</span></h2><p class="feed-sub">What's happening around you.</p><div class="feed" id="feed"></div></section>
+ <section class="p notebook-panel"><h2>Notebook <span class="mobile-hint">Promises & people</span></h2><div id="nb"></div>
 <div class="savebar">
 <button onclick="saveGame()">Save</button>
 <button onclick="loadGame()">Load</button>
 <button onclick="wipeSave()">Reset Save</button>
 </div>
 </section>
- <section class="p"><h2>Lagos Feed</h2><div class="feed" id="feed"></div></section>
 </div></div>
+<style id="v10-collapse-css">
+@media(max-width:720px){
+  .mobile-collapsible{cursor:pointer}
+  .mobile-collapsible.mobile-collapsed>div:not(.savebar){display:none}
+  .mobile-collapsible.mobile-collapsed .savebar{display:none}
+  .mobile-collapsible.mobile-collapsed h2{margin-bottom:0}
+}
+</style>
 <div id="toast"></div>
 <div id="fin"><div class="p"><h2>Sunday night. The week don end.</h2><div class="big" id="sc"></div><h2 id="ti"></h2><p id="sm" style="color:var(--mut)"></p><button class="end pulse" onclick="init()">Play again</button></div></div>
 <script>
 
 /* V8 PLAYER IDENTITY */
 window.V8PLAYER = JSON.parse(localStorage.getItem('LTH_V8_PLAYER') || 'null');
-window.V8HUSTLE = 'Creative';
+window.V8HUSTLE = (window.V8PLAYER && window.V8PLAYER.hustle) ? window.V8PLAYER.hustle : 'Creative';
 function v8SavePlayer(){
   localStorage.setItem('LTH_V8_PLAYER', JSON.stringify({name:window.V8PLAYER?.name || 'Player', hustle:window.V8HUSTLE || 'Creative'}));
 }
-function v8DisplayName(){ return (window.V8PLAYER && window.V8PLAYER.name) ? window.V8PLAYER.name : 'Player'; }
+function v8DisplayName(){
+  const n=(window.V8PLAYER && typeof window.V8PLAYER.name==='string') ? window.V8PLAYER.name.trim() : '';
+  return n || 'Player';
+}
 function v8ApplyIdentity(){
   const n=v8DisplayName();
   document.title='Lagos: The Hustle · '+n;
-  const h=document.querySelector('h1'); if(h) h.innerHTML='Lagos: <em>The Hustle</em> <span style="font-size:.32em;color:var(--mut);vertical-align:middle">· '+n+'</span>';
-  const brand=document.querySelector('.brand'); if(brand) brand.innerHTML='<b>WE TALK SOUND</b> · Interactive Lagos Lab · <span style="color:var(--o)">'+n+'</span>';
-  const nm=document.querySelector('#nm'); if(nm) nm.textContent=n;
+  const clean=n.replace(/[<>]/g,'');
+  const nm=document.querySelector('#nm'); if(nm) nm.textContent=clean;
+  const plate=document.querySelector('#nameplate'); if(plate) plate.textContent=clean;
+  const brand=document.querySelector('.brand'); if(brand) brand.setAttribute('aria-label','WeTalkSound Interactive Lagos Lab · '+clean);
 }
 
 const DAYS=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
@@ -428,6 +484,7 @@ function autoClock(){
 }
 
 function render(){
+ v8ApplyIdentity();
  $('#days').innerHTML=DAYS.map((d,i)=>'<span class="'+(i<S.d?'done':i===S.d?'on':'')+'">'+d.slice(0,3)+'</span>').join('');
  $('#vibe').textContent=vibe();$('#wx').textContent=DAYS[S.d]+' · '+hm(S.t)+' · '+WX[S.d][0];$('#alerts').innerHTML=alerts();
  $('#stats').innerHTML=bar('Cash',S.cash/2000,S.cash<15000?'r':'o',N(S.cash))+bar('Energy',S.en,S.en<25?'r':'',S.en)+bar('Hunger',S.hu,S.hu>=70?'r':'o',S.hu)+bar('Reputation',S.rep,'b',S.rep)+bar('Connections',S.con*10,'',S.con);
@@ -623,12 +680,27 @@ function story(id,o){
     avatar.textContent=avatars[window.V8HUSTLE]||'🧑🏾‍💼';
   }
   document.getElementById('v8-start').addEventListener('click',()=>{
-    const n=(name.value||'Player').trim().replace(/[<>]/g,'').slice(0,22)||'Player';
+    const n=(name.value||'').trim().replace(/[<>]/g,'').slice(0,22); if(!n){ name.focus(); toast('Enter your name first.'); return; }
     window.V8PLAYER={name:n,hustle:window.V8HUSTLE||'Creative'}; v8SavePlayer(); v8ApplyIdentity();
     ob.classList.add('hide');
     try{ localStorage.removeItem('LTH_V7_SAVE'); }catch(e){}
     if(typeof toast==='function') toast('Welcome to Lagos, '+n+'. Oya, make your move.');
   });
+})();
+
+
+(function(){
+  const panels=[document.querySelector('.map-panel'),document.querySelector('.notebook-panel')].filter(Boolean);
+  function setup(){
+    const mobile=window.matchMedia('(max-width:720px)').matches;
+    panels.forEach(p=>{
+      p.classList.add('mobile-collapsible');
+      if(mobile && !p.dataset.v10ready){ p.classList.add('mobile-collapsed'); p.dataset.v10ready='1'; }
+      const h=p.querySelector('h2');
+      if(h && !h.dataset.v10bound){ h.dataset.v10bound='1'; h.addEventListener('click',()=>{ if(window.matchMedia('(max-width:720px)').matches) p.classList.toggle('mobile-collapsed'); }); }
+    });
+  }
+  setup(); window.addEventListener('resize',setup);
 })();
 
 $('#endB').onclick=endDay;init();
