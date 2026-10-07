@@ -138,7 +138,7 @@ h2{margin:0 0 10px;font-size:17px;font-weight:700}
 @keyframes v7shake{25%{transform:translateX(-3px)}50%{transform:translateX(3px)}75%{transform:translateX(-2px)}}
 
 .savebar{display:flex;gap:7px;margin-top:8px}.savebar button{font:inherit;font-size:12px;color:var(--ink);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:9px;padding:6px 9px;cursor:pointer}.savebar button:hover{border-color:var(--o)}
-/* V10 UX: mobile-first hierarchy */
+/* V11 UX: mobile game flow */
 .player-chip{font-size:12px;color:var(--o);font-weight:800;padding:5px 10px;border-radius:999px;border:1px solid rgba(255,122,26,.35);background:rgba(255,122,26,.08);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mission-label{font-size:10px;letter-spacing:.1em;color:var(--o);font-weight:800;margin-top:8px}.mis{padding:9px 10px;border:1px solid rgba(255,122,26,.22);border-radius:12px;background:rgba(255,122,26,.055)}
 .mobile-hint{display:none;font-size:10px;color:var(--mut);font-weight:500;margin-left:5px}
@@ -147,15 +147,34 @@ h2{margin:0 0 10px;font-size:17px;font-weight:700}
  body{font-size:14px;overflow-x:hidden}.wrap{padding:10px 10px 24px}.brand{font-size:10px}.v7badge{font-size:8px;padding:2px 6px;margin-left:3px}
  h1{font-size:34px;margin-top:5px}.top{gap:6px;margin-top:7px}.days{order:1;width:100%;justify-content:flex-start}.days span{font-size:10px;padding:3px 7px}.player-chip{order:2;max-width:46vw;font-size:11px}.vibe{order:3;font-size:11px;padding:4px 9px;margin-left:auto}.wx{font-size:12px;margin:7px 0 0}.alerts{margin-top:7px}.al{font-size:12px;padding:7px 9px}
  .stagep{position:relative;top:auto;z-index:2;margin-top:8px;padding:6px;border-radius:15px}.stagep .stage{width:100%;max-width:none;aspect-ratio:600/230}.scenehint{font-size:9px;padding:3px 7px}.where{font-size:10px;padding:3px 7px}.nameplate{font-size:8px}
- .grid{display:flex;flex-direction:column;gap:10px;margin-top:10px}.grid>#card{order:0}.grid>section:nth-of-type(1){order:1}.grid>section.map-panel{order:5}.grid>section:nth-of-type(3){order:2}.grid>section.feed-panel{order:3}.grid>section.notebook-panel{order:6}
+ .grid{display:flex;flex-direction:column;gap:10px;margin-top:10px}.grid>section.map-panel{order:1}.grid>section:nth-of-type(2){order:2}.grid>section.notebook-panel{order:3}
  .grid .p{padding:11px;border-radius:15px}.grid h2{font-size:15px;margin-bottom:8px}.mobile-hint{display:inline}.stats{grid-template-columns:repeat(2,1fr);gap:6px}.st{padding:7px 8px;border-radius:10px;background:rgba(255,255,255,.025)}.st strong{font-size:17px}.st small{font-size:10px}.slots{font-size:11px;margin-top:8px}
  .acts{grid-template-columns:1fr;gap:7px}.act{padding:10px;border-radius:12px}.act b{font-size:14px}.act small{font-size:11px}.chips{margin-top:5px}.chip{font-size:10px}
- .feed-panel{box-shadow:0 8px 26px rgba(255,122,26,.08)}.feed{max-height:230px;font-size:12px}.feed div{padding:7px 8px}.feed-sub{font-size:11px;margin-bottom:7px}
  .map{height:220px}.pin{font-size:11px;padding:4px 7px}.pin small{font-size:9px}.tag{font-size:11px}.notebook-panel{opacity:.92}.savebar button{font-size:11px;padding:6px 8px}
  /* Keep secondary information compact without hiding it. */
  .map-panel .map,.map-panel .tag{max-height:0;opacity:0;overflow:hidden;margin:0;transition:max-height .25s ease,opacity .2s ease}.map-panel:focus-within .map,.map-panel:focus-within .tag,.map-panel:hover .map,.map-panel:hover .tag{max-height:260px;opacity:1;margin-top:8px}
  /* On touch, tapping the map heading expands it via the section itself. */
  .map-panel h2{cursor:pointer}.map-panel h2:active{color:var(--o)}
+}
+
+/* V11 mobile game-flow */
+.mobile-sticky{display:contents}.actions-panel .mission-label{margin-top:0;margin-bottom:5px}.actions-panel .mis{margin-bottom:10px}
+.life-panel{margin-top:0}
+#result{position:fixed;inset:0;z-index:20;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.62);backdrop-filter:blur(5px)}
+#result.on{display:flex}
+.result-box{width:min(520px,100%);background:#0e2119;border:1px solid var(--line);border-top:4px solid var(--o);border-radius:20px;padding:18px;box-shadow:0 18px 60px rgba(0,0,0,.5);animation:resultIn .22s ease-out}
+@keyframes resultIn{from{transform:translateY(18px) scale(.98);opacity:0}to{transform:none;opacity:1}}
+.result-kicker{font-size:10px;letter-spacing:.12em;color:var(--o);font-weight:800;margin-bottom:4px}.result-box h2{font-size:23px;margin:0 0 5px}.result-box p{margin:0;color:var(--ink);font-size:15px}.result-deltas{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.result-deltas span{padding:5px 9px;border-radius:10px;border:1px solid var(--line);font-size:12px}.result-deltas .good{color:var(--g);border-color:rgba(63,207,133,.45)}.result-deltas .bad{color:var(--r);border-color:rgba(255,84,104,.45)}.result-extra{margin-top:10px;padding:9px 10px;border-radius:11px;background:rgba(255,255,255,.04);color:var(--mut);font-size:13px}.result-box .end{margin-top:14px}
+@media(max-width:720px){
+  .mobile-sticky{display:block;position:sticky;top:0;z-index:15;padding-top:env(safe-area-inset-top,0px);margin:0 -10px;background:linear-gradient(var(--bg) 88%,transparent);}
+  .mobile-sticky .stagep{position:relative;top:auto;z-index:1;margin-top:0;border-radius:0 0 15px 15px;padding:6px 10px 5px;box-shadow:0 10px 26px rgba(0,0,0,.28)}
+  .mobile-sticky .stagep .stage{aspect-ratio:600/230}
+  .mobile-sticky .life-panel{position:relative;margin:0 10px;padding:9px 10px;border-radius:0 0 15px 15px;border-top:0;background:rgba(8,19,15,.96);box-shadow:0 10px 26px rgba(0,0,0,.24)}
+  .mobile-sticky .life-panel h2{font-size:12px;margin:0 0 5px;letter-spacing:.02em}.mobile-sticky .stats{grid-template-columns:repeat(4,1fr);gap:5px}.mobile-sticky .st{padding:5px 5px;border-radius:8px}.mobile-sticky .st strong{font-size:14px}.mobile-sticky .st small{font-size:9px}.mobile-sticky .st .bar{height:4px;margin-top:2px}.mobile-sticky .slots{margin-top:5px;font-size:9px}.mobile-sticky .slots .bar{height:4px}
+  .grid{display:flex;flex-direction:column;gap:10px;margin-top:12px}.grid>section.map-panel{order:1}.grid>section:nth-of-type(2){order:2}.grid>section.notebook-panel{order:3}
+  .grid .p{padding:11px;border-radius:15px}.grid h2{font-size:15px;margin-bottom:8px}
+  .map-panel .map{height:220px;max-height:none;opacity:1;overflow:hidden;margin-top:0}.map-panel .tag{max-height:none;opacity:1;margin-top:8px}
+  .result-box{padding:16px;border-radius:18px}.result-box h2{font-size:21px}.result-box p{font-size:14px}.result-box .end{padding:11px}
 }
 </style></head>
 <body>
@@ -255,11 +274,11 @@ font:inherit;font-weight:800;font-size:16px;cursor:pointer}.v8-start:hover{filte
   </div>
 </div>
 <div class="wrap">
-<div class="brand"><b>WE TALK SOUND</b> · Interactive Lagos Lab <span class="v7badge">V10 · MOBILE FIRST</span></div>
+<div class="brand"><b>WE TALK SOUND</b> · Interactive Lagos Lab <span class="v7badge">V11 · MOBILE GAME FLOW</span></div>
 <h1>Lagos: <em>The Hustle</em></h1>
 <div class="top"><div class="days" id="days"></div><div class="player-chip" id="nm">PLAYER</div><div class="vibe" id="vibe"></div></div>
 <p class="wx" id="wx"></p><div class="alerts" id="alerts"></div>
-<section class="p stagep"><div class="stage" id="stage" data-pose="idle" data-emo="neutral" data-set="none">
+<div class="mobile-sticky"><section class="p stagep"><div class="stage" id="stage" data-pose="idle" data-emo="neutral" data-set="none">
 <div class="stars"></div><div class="orb" id="orb"></div>
 <svg class="bgsvg" viewBox="0 0 600 230" preserveAspectRatio="xMidYMax slice"><g class="bg" id="bg"></g><rect y="185" width="600" height="45" fill="#26262b"/><rect y="185" width="600" height="5" fill="#4a4a50"/><g class="dash"><path d="M0 209H600" stroke="#ffc20e" stroke-width="3" stroke-dasharray="26 22"/></g><g class="int" id="int"></g></svg>
 <div class="npc"><svg viewBox="0 0 120 150"><rect x="44" y="56" width="32" height="44" rx="10" fill="#2f6fd0"/><rect x="46" y="98" width="12" height="40" rx="5" fill="#333"/><rect x="62" y="98" width="12" height="40" rx="5" fill="#333"/><circle cx="60" cy="36" r="15" fill="#6b4328"/><path d="M45 32Q47 16 60 16Q74 16 75 32Q68 24 60 24Q52 24 45 32Z" fill="#14100d"/></svg></div>
@@ -283,14 +302,13 @@ font:inherit;font-weight:800;font-size:16px;cursor:pointer}.v8-start:hover{filte
 <g class="laptop"><rect x="72" y="88" width="36" height="3" fill="#cfd3d8"/><path d="M77 88L81 66H104L104 88Z" fill="#2c3036"/><circle cx="92" cy="77" r="3" fill="#ff7a1a"/></g></g>
 <text class="zzz" x="82" y="22" fill="#fff" font-size="16" font-weight="800">z z z</text></svg></div>
 <svg class="bgsvg fg" viewBox="0 0 600 230" preserveAspectRatio="xMidYMax slice"><g class="int" id="fgi"></g></svg><div class="veh" id="veh"></div><div class="rain"></div><div class="fx" id="fx"></div><div class="tb" id="tb"></div><div class="nameplate" id="nameplate"></div><div class="where" id="where"></div><div class="scenehint" id="scenehint">YOU ARE HERE</div><div class="cap" id="cap"></div>
-</div><div class="mission-label">YOUR GAME PLAN</div><div class="mis" id="mis"></div></section>
+</div></section><section class="p life-panel"><h2>Your life</h2><div class="stats" id="stats"></div><div id="slots"></div></section></div>
 <div class="grid">
  <div id="dlg"><div class="dbox"><div class="dhead"><div class="dav" id="dav"></div><div><b id="dwho"></b><p id="dtxt"></p></div></div><div id="dopts"></div></div></div>
 <div id="card"><h2 id="cardT"></h2><p id="cardS"></p></div>
-<section class="p"><h2>Your life</h2><div class="stats" id="stats"></div><div id="slots"></div></section>
+<div id="result" aria-live="polite"><div class="result-box"><div class="result-kicker" id="resultKicker">ACTION RESULT</div><h2 id="resultTitle"></h2><p id="resultText"></p><div class="result-deltas" id="resultDeltas"></div><div class="result-extra" id="resultExtra"></div><button class="end pulse" id="resultBtn" onclick="hideResult()">Continue</button></div></div>
  <section class="p map-panel"><h2>Lagos map <span class="mobile-hint">Tap to explore</span></h2><div class="map" id="map"></div><p class="tag" id="tag"></p></section>
- <section class="p"><h2 id="atT"></h2><div class="acts" id="acts"></div><button class="end" id="endB"></button></section>
- <section class="p feed-panel"><h2><span>Lagos Feed</span><span class="feed-live">LIVE</span></h2><p class="feed-sub">What's happening around you.</p><div class="feed" id="feed"></div></section>
+ <section class="p actions-panel"><h2 id="atT"></h2><div class="mission-label">TODAY'S MISSION</div><div class="mis" id="mis"></div><div class="acts" id="acts"></div><button class="end" id="endB"></button></section>
  <section class="p notebook-panel"><h2>Notebook <span class="mobile-hint">Promises & people</span></h2><div id="nb"></div>
 <div class="savebar">
 <button onclick="saveGame()">Save</button>
@@ -404,6 +422,26 @@ function list(){
  if(broke)L.push({id:'hawk',t:'Hawk on the street',d:'Free hustle for when pocket is empty. Pride pays no bills.',pay:Q(R(3000,5000)),e:-15,h:10,r:-1,tm:60,sp:1,est:1});
  return L;
 }
+function hideResult(){
+ const r=$('#result');if(!r)return;r.classList.remove('on');
+}
+function escHTML(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));}
+function showResult(title,text,before,after,extras){
+ const r=$('#result');if(!r)return;
+ $('#resultKicker').textContent='LAGOS FEED · ACTION RESULT';
+ $('#resultTitle').textContent=title;
+ $('#resultText').textContent=text;
+ const ds=[];
+ const add=(label,v,fmt)=>{if(!v)return;const cls=v>0?'good':'bad';ds.push('<span class="'+cls+'">'+label+' '+(v>0?'+':'−')+fmt(Math.abs(v))+'</span>');};
+ add('Cash',after.cash-before.cash,N);add('Energy',after.en-before.en,v=>String(Math.round(v)));add('Hunger',after.hu-before.hu,v=>String(Math.round(v)));add('Rep',after.rep-before.rep,v=>String(Math.round(v)));add('Connections',after.con-before.con,v=>String(Math.round(v)));add('Time',after.t-before.t,lt);
+ $('#resultDeltas').innerHTML=ds.join('');
+ $('#resultExtra').textContent=extras||'';$('#resultExtra').style.display=extras?'block':'none';
+ r.classList.add('on');
+}
+function snapshot(){return {cash:S.cash,en:S.en,hu:S.hu,rep:S.rep,con:S.con,t:S.t};}
+function latestFeed(exclude){
+ return S.feed.find(x=>x.t!==exclude && x.k!=='Morning' && x.k!=='Lagos' && x.k!=='Notebook') || null;
+}
 function act(id){if(S.moving)return;
  const a=list().find(x=>x.id===id);if(!a||S.over)return;const sk=S.stock[S.at];
  if(S.t>=END)return toast('Night don fall. End the day.');
@@ -430,7 +468,12 @@ function act(id){if(S.moving)return;
  }else{o.cash+=a.pay;k='Breakthrough';t='The referral came through! "My guy" delivered. (+'+N(a.pay)+')';c='good';}
  if(S.hu>=70&&a.pay&&id!=='hawk')t+=' (Hunger cut your pay.)';
  if(a.st)sk[a.st]--;
- ap(o);trk(id,o);say(k,t,c);tick();event(.3);render();pose(id,o.cash,c,o);story(id,o);
+ const before=snapshot();const feedBefore=S.feed.length;
+ ap(o);trk(id,o);say(k,t,c);tick();event(.3);
+ const after=snapshot();const fresh=S.feed.slice(0,Math.max(0,S.feed.length-feedBefore));
+ render();pose(id,o.cash,c,o);story(id,o);
+ const extra=fresh.filter(x=>x.t!==t&&x.k!=='Notebook'&&x.k!=='Morning').map(x=>x.t).slice(0,1)[0]||'';
+ showResult(k,t,before,after,extra);
 }
 function endDay(){
  if(S.over)return;
@@ -494,7 +537,7 @@ function render(){
  const sk=S.stock[S.at];
  $('#acts').innerHTML=list().map(a=>{const off=S.over||S.t>=END||a.lock||(a.st&&sk[a.st]<1);return '<button class="act'+(a.sp?' sp':'')+'" onclick="act(\''+a.id+'\')"'+(off?' disabled':'')+'><b>'+a.t+'</b><small>'+(a.lock||a.d)+'</small><div class="chips">'+chips(a,sk)+'</div></button>';}).join('');
  const b=$('#endB');b.className='end'+(S.t>=END?' pulse':'');b.textContent=S.d>=6?'Finish the week and see my score':(S.t>=END?'Night don fall: end the day':'Go to bed early (bonus energy)');
- chkM();$('#mis').innerHTML=misR();$('#nb').innerHTML=nbR();scene();$('#feed').innerHTML=S.feed.slice(0,14).map(l=>'<div class="'+l.c+'"><i>'+l.k+'</i>'+l.t+'</div>').join('');
+ chkM();$('#mis').innerHTML=misR();$('#nb').innerHTML=nbR();scene();
 }
 const MODE={yaba:'okada',surulere:'keke',ikeja:'danfo',vi:'danfo',lekki:'danfo'},MN={okada:'Okada',keke:'Keke',danfo:'Danfo'};
 const W=(x,y)=>'<g class="wheel"><circle cx="'+x+'" cy="'+y+'" r="14" fill="#17181c"/><line x1="'+x+'" y1="'+(y-12)+'" x2="'+x+'" y2="'+(y+12)+'" stroke="#999" stroke-width="3"/></g>';
@@ -528,11 +571,13 @@ function scene(){
 }
 function go(k){
  if(S.moving||S.over||k===S.at)return;
+ const before=snapshot();
  if(!goNow(k))return;
+ const after=snapshot();const latest=S.feed[0];
  const st=$('#stage'),m=MODE[k];S.moving=true;$('#veh').innerHTML=VEH[m];
  $('#cap').textContent=MN[m]+' to '+AR[k].n+(rush()?' · rush hour!':'')+(rain()?' · rain':'');
  st.classList.add('travel');
- setTimeout(()=>{st.classList.remove('travel');st.classList.add('arrive','v7-arrive');S.moving=false;st.dataset.area='';scene();st.dataset.pose='walk';st.dataset.set='none';setTimeout(()=>{st.classList.remove('arrive','v7-arrive');st.dataset.pose='idle';},900);flushEv(600);},1700);
+ setTimeout(()=>{st.classList.remove('travel');st.classList.add('arrive','v7-arrive');S.moving=false;st.dataset.area='';scene();st.dataset.pose='walk';st.dataset.set='none';setTimeout(()=>{st.classList.remove('arrive','v7-arrive');st.dataset.pose='idle';},900);flushEv(600);showResult('Transport','You made it to '+AR[k].n+'.',before,after,latest&&latest.t!==('To '+AR[k].n+':')?latest.t:'');},1700);
 }
 const POSE={safe:'work',serious:'work',rush:'work',lead:'work',ref:'work',net:'talk',evt:'talk',eat:'eat',rest:'rest',out:'dance',hawk:'walk'};
 function poseOld(id,d){
